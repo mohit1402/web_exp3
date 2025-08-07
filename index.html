@@ -28,10 +28,13 @@
             background-color: #ffffff;
             border-bottom: 1px solid #ddd;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .website-title {
-            font-size: 2em; /* Adjusted font size */
+            font-size: 2em;
             color: #2c7bfe;
             margin: 0;
         }
@@ -40,7 +43,7 @@
             width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 20px; /* Rounded borders */
+            border-radius: 20px;
             font-size: 1em;
         }
 
@@ -66,47 +69,47 @@
 
         /* Main Content: Image Gallery */
         .gallery-container {
-            display: flex; /* Using Flexbox for layout */
+            display: flex;
             gap: 20px;
             padding: 20px;
             justify-content: center;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            flex-wrap: wrap;
         }
 
         .gallery-item {
-            flex: 1; /* Makes sections equal-width */
-            min-width: 200px; /* Minimum width before wrapping */
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
             height: 250px;
-            border-radius: 15px; /* Rounded borders */
+            border-radius: 15px;
             background-size: cover;
             background-position: center;
-            position: relative; /* Needed for positioning the caption */
+            position: relative;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05); /* Hover effect */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced box-shadow on hover */
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .caption {
-            position: absolute; /* Positioned relative to .gallery-item */
+            position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             text-align: center;
             padding: 15px 0;
             font-size: 1.2em;
             font-weight: bold;
-            opacity: 0.9; /* Opacity for the caption box */
         }
 
         /* Main Content: Alternating Sections */
         .content-section {
-            display: flex; /* Using Flexbox for side-by-side layout */
+            display: flex;
             align-items: center;
             gap: 30px;
             padding: 50px;
@@ -115,27 +118,25 @@
         }
 
         .content-section.alternate {
-            flex-direction: row-reverse; /* Alternates the layout */
+            flex-direction: row-reverse;
             background-color: #eaf4ff;
         }
 
         .content-image {
             flex: 1;
             text-align: center;
-            /* background: #e0e0e0; REMOVED placeholder background */
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 200px;
         }
         
-        /* ADDED this new rule for responsive images inside the content sections */
         .content-image img {
             max-width: 100%;
             height: auto;
             max-height: 250px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .content-text {
@@ -164,11 +165,21 @@
             .header {
                 flex-direction: column;
                 gap: 15px;
+                position: static;
             }
             
             .content-section, .content-section.alternate {
-                flex-direction: column; /* Stack content vertically */
+                flex-direction: column;
                 text-align: center;
+                padding: 30px 20px;
+            }
+
+            .website-title {
+                font-size: 1.8em;
+            }
+
+            .search-container input {
+                width: 100%;
             }
         }
     </style>
@@ -184,7 +195,7 @@
 
     <main>
         <section class="banner">
-            </section>
+        </section>
 
         <section class="welcome">
             <h2>Welcome to MediQuick</h2>
@@ -208,7 +219,7 @@
 
         <section class="content-section">
             <div class="content-image">
-                <img src="images/delivery.svg" alt="Fast and Reliable Delivery Van">
+                <img src="images/delivery.jpg" alt="Fast and Reliable Delivery Service">
             </div>
             <div class="content-text">
                 <h3>Fast & Reliable Delivery</h3>
@@ -218,7 +229,7 @@
 
         <section class="content-section alternate">
             <div class="content-image">
-                <img src="images/prescription-upload.svg" alt="Easy Prescription Upload Icon">
+                <img src="images/prescription-upload.jpg" alt="Easy Prescription Upload Feature">
             </div>
             <div class="content-text">
                 <h3>Easy Prescription Upload</h3>
