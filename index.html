@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediQuick - Your Online Pharmacy</title>
+    
     <style>
+        /* General Body and Box-Sizing */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -10,9 +14,12 @@
             background-color: #f4f7f6;
             color: #333;
         }
+
         * {
             box-sizing: border-box;
         }
+
+        /* Header Section Styling */
         .header {
             display: flex;
             justify-content: space-between;
@@ -22,150 +29,186 @@
             border-bottom: 1px solid #ddd;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .website-title {
-            font-size: 2em;
+            font-size: 2em; /* Adjusted font size */
             color: #2c7bfe;
             margin: 0;
         }
+
         .search-container input {
             width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 20px;
+            border-radius: 20px; /* Rounded borders */
             font-size: 1em;
         }
+
+        /* Main Content: Banner */
         .banner {
             height: 400px;
             background-image: url('https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
+
+        /* Main Content: Welcome Section */
         .welcome {
             text-align: center;
             padding: 40px 20px;
             background-color: #ffffff;
         }
+
         .welcome h2 {
             font-size: 2.2em;
             color: #1a5dab;
         }
+
+        /* Main Content: Image Gallery */
         .gallery-container {
-            display: flex;
+            display: flex; /* Using Flexbox for layout */
             gap: 20px;
             padding: 20px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
         }
+
         .gallery-item {
-            flex: 1;
-            min-width: 200px;
+            flex: 1; /* Makes sections equal-width */
+            min-width: 200px; /* Minimum width before wrapping */
             height: 250px;
-            border-radius: 15px;
+            border-radius: 15px; /* Rounded borders */
             background-size: cover;
             background-position: center;
-            position: relative;
+            position: relative; /* Needed for positioning the caption */
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05); /* Hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced box-shadow on hover */
         }
+
         .caption {
-            position: absolute;
+            position: absolute; /* Positioned relative to .gallery-item */
             bottom: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             color: white;
             text-align: center;
             padding: 15px 0;
             font-size: 1.2em;
             font-weight: bold;
-            opacity: 0.9;
+            opacity: 0.9; /* Opacity for the caption box */
         }
+
+        /* Main Content: Alternating Sections */
         .content-section {
-            display: flex;
+            display: flex; /* Using Flexbox for side-by-side layout */
             align-items: center;
             gap: 30px;
             padding: 50px;
             background-color: #ffffff;
             margin: 20px 0;
         }
+
         .content-section.alternate {
-            flex-direction: row-reverse;
+            flex-direction: row-reverse; /* Alternates the layout */
             background-color: #eaf4ff;
         }
+
         .content-image {
             flex: 1;
-            min-height: 250px; /* Adjusted height for better visuals */
+            text-align: center;
+            /* background: #e0e0e0; REMOVED placeholder background */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
         }
-        .content-image img { /* Rule for the new images */
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        
+        /* ADDED this new rule for responsive images inside the content sections */
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
             border-radius: 10px;
         }
+
         .content-text {
             flex: 1;
         }
+
         .content-text h3 {
             font-size: 1.8em;
             color: #1a5dab;
         }
+
+        /* Footer Section Styling */
         .footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px;
         }
+
         .footer p {
             margin: 5px 0;
         }
+
+        /* Responsive Design for smaller screens */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 gap: 15px;
             }
+            
             .content-section, .content-section.alternate {
-                flex-direction: column;
+                flex-direction: column; /* Stack content vertically */
                 text-align: center;
             }
         }
     </style>
 </head>
 <body>
+
     <header class="header">
         <h1 class="website-title">MediQuick ⚕️</h1>
         <div class="search-container">
             <input type="search" placeholder="Search for medicines & products...">
         </div>
     </header>
+
     <main>
         <section class="banner">
-        </section>
+            </section>
+
         <section class="welcome">
             <h2>Welcome to MediQuick</h2>
             <p>Your one-stop destination for all your healthcare needs. Order medicines, book lab tests, and consult with doctors online, all from the comfort of your home. We are committed to providing you with safe, reliable, and affordable healthcare.</p>
         </section>
+
         <section class="gallery-container">
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1584308666744-8480404b65ae?q=80&w=2070&auto=format&fit=crop');">
+            <div class="gallery-item" style="background-image: url('images/order-medicines.jpg');">
                 <div class="caption">Order Medicines</div>
             </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');">
+            <div class="gallery-item" style="background-image: url('images/doctor-consultation.jpg');">
                 <div class="caption">Doctor Consultation</div>
             </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
+            <div class="gallery-item" style="background-image: url('images/lab-tests.jpg');">
                 <div class="caption">Book Lab Tests</div>
             </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1628771065518-5d8241418659?q=80&w=2070&auto=format&fit=crop');">
+            <div class="gallery-item" style="background-image: url('images/healthcare-products.jpg');">
                 <div class="caption">Healthcare Products</div>
             </div>
         </section>
 
         <section class="content-section">
             <div class="content-image">
-                <img src="https://images.unsplash.com/photo-1590842498716-46c2d1b6a1b2?auto=format&fit=crop" alt="A delivery box being handed over">
+                <img src="images/delivery.svg" alt="Fast and Reliable Delivery Van">
             </div>
             <div class="content-text">
                 <h3>Fast & Reliable Delivery</h3>
@@ -175,7 +218,7 @@
 
         <section class="content-section alternate">
             <div class="content-image">
-                <img src="https://images.unsplash.com/photo-1584515933487-779824d29219?auto=format&fit=crop" alt="A person uploading a prescription using a smartphone">
+                <img src="images/prescription-upload.svg" alt="Easy Prescription Upload Icon">
             </div>
             <div class="content-text">
                 <h3>Easy Prescription Upload</h3>
@@ -183,9 +226,11 @@
             </div>
         </section>
     </main>
+
     <footer class="footer">
         <p>&copy; 2025 MediQuick. All Rights Reserved.</p>
         <p>Your Trusted Online Pharmacy Partner</p>
     </footer>
+
 </body>
 </html>
