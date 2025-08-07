@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>MediQuick - Your Online Pharmacy</title>
+    
+    <style>
+        /* General Body and Box-Sizing */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Header Section Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .website-title {
+            font-size: 2em; /* Adjusted font size */
+            color: #2c7bfe;
+            margin: 0;
+        }
+
+        .search-container input {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px; /* Rounded borders */
+            font-size: 1em;
+        }
+
+        /* Main Content: Banner */
+        .banner {
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Main Content: Welcome Section */
+        .welcome {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .welcome h2 {
+            font-size: 2.2em;
+            color: #1a5dab;
+        }
+
+        /* Main Content: Image Gallery */
+        .gallery-container {
+            display: flex; /* Using Flexbox for layout */
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        }
+
+        .gallery-item {
+            flex: 1; /* Makes sections equal-width */
+            min-width: 200px; /* Minimum width before wrapping */
+            height: 250px;
+            border-radius: 15px; /* Rounded borders */
+            background-size: cover;
+            background-position: center;
+            position: relative; /* Needed for positioning the caption */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05); /* Hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced box-shadow on hover */
+        }
+
+        .caption {
+            position: absolute; /* Positioned relative to .gallery-item */
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            opacity: 0.9; /* Opacity for the caption box */
+        }
+
+        /* Main Content: Alternating Sections */
+        .content-section {
+            display: flex; /* Using Flexbox for side-by-side layout */
+            align-items: center;
+            gap: 30px;
+            padding: 50px;
+            background-color: #ffffff;
+            margin: 20px 0;
+        }
+
+        .content-section.alternate {
+            flex-direction: row-reverse; /* Alternates the layout */
+            background-color: #eaf4ff;
+        }
+
+        .content-image {
+            flex: 1;
+            padding: 10px;
+            background: #e0e0e0; /* Placeholder background */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px; /* Ensures the box has a size */
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text h3 {
+            font-size: 1.8em;
+            color: #1a5dab;
+        }
+
+        /* Footer Section Styling */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content-section, .content-section.alternate {
+                flex-direction: column; /* Stack content vertically */
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="website-title">MediQuick ⚕️</h1>
+        <div class="search-container">
+            <input type="search" placeholder="Search for medicines & products...">
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            </section>
+
+        <section class="welcome">
+            <h2>Welcome to MediQuick</h2>
+            <p>Your one-stop destination for all your healthcare needs. Order medicines, book lab tests, and consult with doctors online, all from the comfort of your home. We are committed to providing you with safe, reliable, and affordable healthcare.</p>
+        </section>
+
+        <section class="gallery-container">
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1584308666744-8480404b65ae?q=80&w=2070&auto=format&fit=crop');">
+                <div class="caption">Order Medicines</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');">
+                <div class="caption">Doctor Consultation</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
+                <div class="caption">Book Lab Tests</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1628771065518-5d8241418659?q=80&w=2070&auto=format&fit=crop');">
+                <div class="caption">Healthcare Products</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-image">
+                </div>
+            <div class="content-text">
+                <h3>Fast & Reliable Delivery</h3>
+                <p>Get your medicines and healthcare products delivered to your doorstep. We ensure prompt delivery with our robust logistics network, so you never have to wait long for your essentials. Our packaging is safe, secure, and discreet.</p>
+            </div>
+        </section>
+
+        <section class="content-section alternate">
+            <div class="content-image">
+                </div>
+            <div class="content-text">
+                <h3>Easy Prescription Upload</h3>
+                <p>Simply upload a picture of your prescription, and we'll take care of the rest. Our team of qualified pharmacists will verify your prescription and process your order accurately. It's a hassle-free way to get your prescribed medications.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 MediQuick. All Rights Reserved.</p>
+        <p>Your Trusted Online Pharmacy Partner</p>
+    </footer>
+
+</body>
+</html>
